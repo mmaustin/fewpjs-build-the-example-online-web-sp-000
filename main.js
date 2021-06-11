@@ -6,8 +6,18 @@ const FULL_HEART = '♥'
 const modal = document.querySelector('#modal');
 modal.setAttribute("class", "hidden");
 
-
-
+let heart = document.querySelector('li span');
+heart.addEventListener('click', clickHeart)
+//Still have to figure out how to get this mock server to work
+function clickHeart(){
+  if(heart.innerHTML === EMPTY_HEART){
+    heart.innerHTML = FULL_HEART;
+    heart.setAttribute("class", "activated-heart")
+  } else if (heart.innerHTML === FULL_HEART) {
+    heart.innerHTML = EMPTY_HEART;
+    heart.removeAttribute("class", "activated-heart");
+  }
+}
 
 
 //------------------------------------------------------------------------------
